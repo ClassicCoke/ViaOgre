@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ISUI>
+<Template Name='chkbox' template='checkbox'><Width>30</Width><Height>23</Height></Template>
+	<!-- Main UI Window -->
+	<Window Name='EquipmentCheckerXML' Template='Window'>
+		<X>20</X>
+		<Y>20</Y>
+		<Width>420</Width>
+		<Height>325</Height>
+		<Client Template="Window.Client" />
+		<StorePosition>1</StorePosition>
+		<Title>Equipment Checker - UI Ver: 1.00</Title> 
+		<TitleBar Template="Window.TitleBar">
+			<X>0</X>
+			<Y>0</Y>
+			<Width>100%</Width>
+			<Height>11%</Height>
+			<Children>
+				<Text Name="Title" Template="Window.TitleBar.Title">
+					<Alignment>Center</Alignment>
+				</Text>
+				<Button Name="Minimize" Template="Window.TitleBar.Minimize">
+					<X>90%</X>
+					<Width>20</Width>
+					<Height>20</Height>
+				</Button>
+				<CommandButton Name="Custom Quit Button" Template="Window.TitleBar.Close">
+					<X>95%</X>
+					<Width>20</Width>
+					<Height>20</Height>
+					<OnLeftClick>
+						ui -unload scripts\\Custom\\EquipmentChecker\\EquipmentCheckerXML.xml
+					</OnLeftClick>
+				</CommandButton>
+			</Children>
+		</TitleBar>
+
+		<Children>
+			<checkbox name='ChkBoxCharms' template='chkbox'>
+				<X>10</X>
+				<Y>5</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Charms</Text>
+				<OnLoad>
+					declarevariable EQ2CharmID int global
+					EQ2CharmID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2CharmID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxEars]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxNeck]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRings]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWrists]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHead]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShoulders]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxChest]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxForearms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHands]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxLegs]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxFeet]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCloak]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWaist]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxPrimary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxSecondary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRanged]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxEars' template='chkbox'>
+				<X>10</X>
+				<Y>25</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Ears</Text>
+				<OnLoad>
+					declarevariable EQ2EarID int global
+					EQ2EarID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2EarID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCharms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxNeck]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRings]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWrists]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHead]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShoulders]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxChest]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxForearms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHands]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxLegs]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxFeet]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCloak]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWaist]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxPrimary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxSecondary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRanged]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxNeck' template='chkbox'>
+				<X>10</X>
+				<Y>45</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Neck</Text>
+				<OnLoad>
+					declarevariable EQ2NeckID int global
+					EQ2NeckID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2NeckID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCharms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxEars]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRings]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWrists]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHead]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShoulders]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxChest]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxForearms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHands]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxLegs]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxFeet]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCloak]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWaist]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxPrimary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxSecondary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRanged]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxRings' template='chkbox'>
+				<X>10</X>
+				<Y>65</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Rings</Text>
+				<OnLoad>
+					declarevariable EQ2RingID int global
+					EQ2RingID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2RingID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCharms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxEars]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxNeck]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWrists]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHead]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShoulders]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxChest]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxForearms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHands]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxLegs]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxFeet]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCloak]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWaist]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxPrimary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxSecondary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRanged]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxWrists' template='chkbox'>
+				<X>10</X>
+				<Y>85</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Wrists</Text>
+				<OnLoad>
+					declarevariable EQ2WristID int global
+					EQ2WristID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2WristID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCharms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxEars]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxNeck]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRings]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHead]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShoulders]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxChest]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxForearms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHands]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxLegs]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxFeet]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCloak]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWaist]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxPrimary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxSecondary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRanged]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxHead' template='chkbox'>
+				<X>310</X>
+				<Y>5</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Head</Text>
+				<OnLoad>
+					declarevariable EQ2HeadID int global
+					EQ2HeadID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2HeadID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCharms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxEars]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxNeck]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRings]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWrists]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShoulders]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxChest]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxForearms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHands]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxLegs]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxFeet]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCloak]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWaist]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxPrimary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxSecondary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRanged]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxShoulders' template='chkbox'>
+				<X>310</X>
+				<Y>25</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Shoulders</Text>
+				<OnLoad>
+					declarevariable EQ2ShoulderID int global
+					EQ2ShoulderID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2ShoulderID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCharms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxEars]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxNeck]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRings]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWrists]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHead]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxChest]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxForearms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHands]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxLegs]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxFeet]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCloak]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWaist]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxPrimary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxSecondary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRanged]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxChest' template='chkbox'>
+				<X>310</X>
+				<Y>45</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Chest</Text>
+				<OnLoad>
+					declarevariable EQ2ChestID int global
+					EQ2ChestID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2ChestID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCharms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxEars]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxNeck]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRings]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWrists]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHead]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShoulders]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxForearms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHands]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxLegs]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxFeet]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCloak]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWaist]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxPrimary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxSecondary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRanged]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxForearms' template='chkbox'>
+				<X>310</X>
+				<Y>65</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Forearms</Text>
+				<OnLoad>
+					declarevariable EQ2ForearmID int global
+					EQ2ForearmID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2ForearmID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCharms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxEars]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxNeck]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRings]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWrists]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHead]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShoulders]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxChest]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHands]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxLegs]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxFeet]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCloak]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWaist]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxPrimary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxSecondary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRanged]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxHands' template='chkbox'>
+				<X>310</X>
+				<Y>85</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Hands</Text>
+				<OnLoad>
+					declarevariable EQ2HandID int global
+					EQ2HandID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2HandID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCharms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxEars]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxNeck]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRings]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWrists]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHead]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShoulders]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxChest]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxForearms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxLegs]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxFeet]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCloak]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWaist]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxPrimary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxSecondary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRanged]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxLegs' template='chkbox'>
+				<X>310</X>
+				<Y>105</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Legs</Text>
+				<OnLoad>
+					declarevariable EQ2LegID int global
+					EQ2LegID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2LegID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCharms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxEars]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxNeck]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRings]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWrists]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHead]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShoulders]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxChest]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxForearms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHands]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxFeet]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCloak]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWaist]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxPrimary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxSecondary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRanged]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxFeet' template='chkbox'>
+				<X>310</X>
+				<Y>125</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Feet</Text>
+				<OnLoad>
+					declarevariable EQ2FeetID int global
+					EQ2FeetID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2FeetID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCharms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxEars]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxNeck]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRings]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWrists]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHead]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShoulders]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxChest]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxForearms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHands]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxLegs]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCloak]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWaist]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxPrimary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxSecondary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRanged]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxCloak' template='chkbox'>
+				<X>110</X>
+				<Y>5</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>Cloak</Text>
+				<OnLoad>
+					declarevariable EQ2CloakID int global
+					EQ2CloakID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2CloakID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCharms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxEars]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxNeck]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRings]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWrists]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHead]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShoulders]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxChest]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxForearms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHands]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxLegs]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxFeet]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWaist]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxPrimary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxSecondary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRanged]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxWaist' template='chkbox'>
+				<X>110</X>
+				<Y>25</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>Waist</Text>
+				<OnLoad>
+					declarevariable EQ2WaistID int global
+					EQ2WaistID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2WaistID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCharms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxEars]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxNeck]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRings]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWrists]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHead]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShoulders]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxChest]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxForearms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHands]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxLegs]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxFeet]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCloak]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxPrimary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxSecondary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRanged]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxPrimary' template='chkbox'>
+				<X>210</X>
+				<Y>5</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>Primary</Text>
+				<OnLoad>
+					declarevariable EQ2PrimaryID int global
+					EQ2PrimaryID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2PrimaryID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCharms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxEars]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxNeck]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRings]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWrists]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHead]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShoulders]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxChest]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxForearms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHands]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxLegs]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxFeet]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCloak]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWaist]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxSecondary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRanged]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxSecondary' template='chkbox'>
+				<X>210</X>
+				<Y>25</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>Secondary</Text>
+				<OnLoad>
+					declarevariable EQ2SecondaryID int global
+					EQ2SecondaryID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2SecondaryID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCharms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxEars]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxNeck]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRings]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWrists]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHead]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShoulders]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxChest]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxForearms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHands]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxLegs]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxFeet]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCloak]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWaist]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxPrimary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRanged]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxRanged' template='chkbox'>
+				<X>210</X>
+				<Y>45</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>Ranged</Text>
+				<OnLoad>
+					declarevariable EQ2RangedID int global
+					EQ2RangedID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2RangedID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCharms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxEars]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxNeck]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxRings]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWrists]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHead]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShoulders]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxChest]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxForearms]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxHands]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxLegs]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxFeet]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxCloak]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxWaist]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxPrimary]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxSecondary]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+
+
+			<checkbox name='ChkBoxShowLinks' template='chkbox'>
+				<X>10</X>
+				<Y>175</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>Show Equiped Link</Text>
+				<OnLoad>
+					declarevariable EQ2ShowLinkID int global
+					EQ2ShowLinkID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2ShowLinkID
+				</OnUnLoad>
+			</checkbox>
+
+			
+			<checkbox name='ChkBoxShowAll' template='chkbox'>
+				<X>210</X>
+				<Y>175</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>All</Text>
+				<OnLoad>
+					declarevariable EQ2ShowAllID int global
+					EQ2ShowAllID:Set[${This.ID}]
+					This:SetChecked
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2ShowAllID
+				</OnUnLoad>
+				<OnLeftClick>
+					This:SetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShowFighters]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShowScouts]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShowMages]:UnsetChecked
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShowHealers]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxShowFighters' template='chkbox'>
+				<X>210</X>
+				<Y>195</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>Fighters</Text>
+				<OnLoad>
+					declarevariable EQ2ShowFighterID int global
+					EQ2ShowFighterID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2ShowFighterID
+				</OnUnLoad>
+				<OnLeftClick>
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShowAll]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxShowScouts' template='chkbox'>
+				<X>310</X>
+				<Y>195</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>Scouts</Text>
+				<OnLoad>
+					declarevariable EQ2ShowScoutID int global
+					EQ2ShowScoutID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2ShowScoutID
+				</OnUnLoad>
+				<OnLeftClick>
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShowAll]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxShowMages' template='chkbox'>
+				<X>210</X>
+				<Y>215</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>Mages</Text>
+				<OnLoad>
+					declarevariable EQ2ShowMageID int global
+					EQ2ShowMageID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2ShowMageID
+				</OnUnLoad>
+				<OnLeftClick>
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShowAll]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='ChkBoxShowHealers' template='chkbox'>
+				<X>310</X>
+				<Y>215</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>Healers</Text>
+				<OnLoad>
+					declarevariable EQ2ShowHealerID int global
+					EQ2ShowHealerID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2ShowHealerID
+				</OnUnLoad>
+				<OnLeftClick>
+					UIElement[EquipmentCheckerXML].FindChild[ChkBoxShowAll]:UnsetChecked
+				</OnLeftClick>
+			</checkbox>
+			
+			
+			<Text name='ItemResolveText' template='Text'>
+				<X>50</X>
+				<Y>200</Y>
+				<Width>350</Width>
+				<Height>20</Height>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Left</Alignment>
+				<Text>Item Resolve</Text>
+			</Text>
+			<TextEntry Name='TextEntryItemResolve'>
+				<X>10</X>
+				<Y>200</Y>
+				<Width>35</Width>
+				<Height>15</Height>
+				<MaxLength>5</MaxLength>
+				<OnLoad>
+					declarevariable EQ2ItemResolveID int global
+					EQ2ItemResolveID:Set[${This.ID}]
+					This:SetText[95]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2ItemResolveID
+				</OnUnLoad>
+			</TextEntry>
+			<Text name='TextCharacterResolveText' template='Text'>
+				<X>75</X>
+				<Y>220</Y>
+				<Width>350</Width>
+				<Height>20</Height>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Left</Alignment>
+				<Text>Max Character Resolve</Text>
+			</Text>
+			<combobox name='CmbBoxCharacterResolve'>
+				<X>10</X>
+				<Y>220</Y>
+				<Width>55</Width> 
+				<Height>15</Height> 
+				<FullHeight>75</FullHeight>
+				<ButtonWidth>20</ButtonWidth>
+				<Items>
+					<Item Value='1'>1310</Item>
+					<Item Value='2'>1610</Item>
+					<Item Value='3'>1725</Item>
+					<Item Value='4'>1790</Item>
+					<Item Value='5'>1910</Item>
+					<Item Value='6'>2032</Item>
+					<Item Value='7'>2112</Item>
+					<Item Value='8'>2273</Item>
+					<Item Value='9'>2395</Item>
+					<Item Value='10' Default='10'>3000</Item>
+				</Items>
+				<OnLoad>
+					declarevariable EQ2CharResolveID int global
+					EQ2CharResolveID:Set[${This.ID}]
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2CharResolveID
+				</OnUnLoad>
+			</combobox>
+			<CommandButton Name="Run Stats Checker" template='Button'>
+				<X>175</X>
+				<Y>280</Y>
+				<Width>85</Width>
+				<Height>20</Height>
+				<Text>Run</Text>
+				<Alignment>Center</Alignment>
+				<Font>
+					<Size>15</Size>
+				</Font>
+				<OnLeftClick>
+					runscript "${LavishScript.HomeDirectory}/Scripts/Custom/EquipmentChecker/EquipmentCheckerRelay"
+				</OnLeftClick>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</CommandButton>
+		</Children>
+	</Window>
+
+</ISUI>

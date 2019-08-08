@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ISUI>
+<Template Name='chkbox' template='checkbox'><Width>30</Width><Height>23</Height></Template>
+	<!-- Main UI Window -->
+	<Window Name='InventoryCheckerXML' Template='Window'>
+		<X>20</X>
+		<Y>20</Y>
+		<Width>450</Width>
+		<Height>120</Height>
+		<Client Template="Window.Client" />
+		<StorePosition>1</StorePosition>
+		<Title>Inventory Checker - UI Ver: 1.00</Title> 
+		<TitleBar Template="Window.TitleBar">
+			<X>0</X>
+			<Y>0</Y>
+			<Width>100%</Width>
+			<Height>11%</Height>
+			<Children>
+				<Text Name="Title" Template="Window.TitleBar.Title">
+					<Alignment>Center</Alignment>
+				</Text>
+				<Button Name="Minimize" Template="Window.TitleBar.Minimize">
+					<X>90%</X>
+					<Width>20</Width>
+					<Height>20</Height>
+				</Button>
+				<CommandButton Name="Custom Quit Button" Template="Window.TitleBar.Close">
+					<X>95%</X>
+					<Width>20</Width>
+					<Height>20</Height>
+					<OnLeftClick>
+						ui -unload scripts\\Custom\\InventoryChecker\\InventoryCheckerXML.xml
+					</OnLeftClick>
+				</CommandButton>
+			</Children>
+		</TitleBar>
+
+		<Children>
+			<TextEntry Name='TextEntryInventoryItem'>
+				<X>25</X>
+				<Y>10</Y>
+				<Width>300</Width>
+				<Height>25</Height>
+				<MaxLength>35</MaxLength>
+				<Font>
+					<Size>20</Size>
+				</Font>
+				<OnLoad>
+					declarevariable EQ2ItemInventoryItemID int global
+					EQ2ItemInventoryItemID:Set[${This.ID}]
+					This:LeftClick
+				</OnLoad>
+				<OnUnLoad>
+					deletevariable EQ2ItemInventoryItemID
+				</OnUnLoad>
+				<OnKeyDown>
+					if ${Key.Equal[Enter]}
+						This.Parent.FindChild[RunChecker]:LeftClick
+						elseif ${Key.Equal[ESC]}
+							This:SetText[]
+				</OnKeyDown>
+			</TextEntry>
+			<Text name='ItemInventoryItemText' template='Text'>
+				<X>330</X>
+				<Y>10</Y>
+				<Width>350</Width>
+				<Height>25</Height>
+				<Font>
+					<Size>20</Size>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Left</Alignment>
+				<Text>Item Name</Text>
+			</Text>
+
+			<CommandButton Name="RunChecker" template='Button'>
+				<X>180</X>
+				<Y>55</Y>
+				<Width>65</Width>
+				<Height>30</Height>
+				<Text>Run</Text>
+				<Alignment>Center</Alignment>
+				<Font>
+					<Size>20</Size>
+				</Font>
+				<OnLeftClick>
+					runscript "${LavishScript.HomeDirectory}/Scripts/Custom/InventoryChecker/InventoryCheckerRelay"
+				</OnLeftClick>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</CommandButton>
+		</Children>
+	</Window>
+</ISUI>

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ISUI>
+<Template Name='chkbox' template='checkbox'><Width>30</Width><Height>23</Height></Template>
+	<!-- Main UI Window -->
+	<Window Name='EQ2EquipmentCheckerXML' Template='Window'>
+		<X>20</X>
+		<Y>20</Y>
+		<Width>400</Width>
+		<Height>295</Height>
+		<Client Template="Window.Client" />
+		<StorePosition>1</StorePosition>
+		<Title>EQ2 Equipment Checker - UI Ver: 1.00</Title> 
+		<TitleBar Template="Window.TitleBar">
+			<X>0</X>
+			<Y>0</Y>
+			<Width>100%</Width>
+			<Height>11%</Height>
+			<Children>
+				<Text Name="Title" Template="Window.TitleBar.Title">
+					<Alignment>Left</Alignment>
+				</Text>
+				<Button Name="Minimize" Template="Window.TitleBar.Minimize">
+					<X>84%</X>
+					<Width>14</Width>
+					<Height>14</Height>
+				</Button>
+				<CommandButton Name="Custom Quit Button" Template="Window.TitleBar.Close">
+					<X>93%</X>
+					<Width>14</Width>
+					<Height>14</Height>
+					<OnLeftClick>
+						timedcommand 0 ogre end transmuteit
+						ui -unload scripts\\Custom\\EQ2EquipmentCheckerXML.xml
+					</OnLeftClick>
+				</CommandButton>
+			</Children>
+		</TitleBar>
+
+		<Children>
+			<checkbox name='ChkBoxCharms' template='chkbox'>
+				<X>95</X>
+				<Y>5</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Charms</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxEars' template='chkbox'>
+				<X>95</X>
+				<Y>25</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Ears</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxNeck' template='chkbox'>
+				<X>95</X>
+				<Y>45</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Neck</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxRings' template='chkbox'>
+				<X>95</X>
+				<Y>65</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Rings</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxWrists' template='chkbox'>
+				<X>95</X>
+				<Y>85</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Wrists</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxShoulders' template='chkbox'>
+				<X>10</X>
+				<Y>25</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Shoulders</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxHead' template='chkbox'>
+				<X>10</X>
+				<Y>5</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Head</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxChest' template='chkbox'>
+				<X>10</X>
+				<Y>45</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Chest</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxForearms' template='chkbox'>
+				<X>10</X>
+				<Y>65</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Forearms</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxHands' template='chkbox'>
+				<X>10</X>
+				<Y>85</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Hands</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxLegs' template='chkbox'>
+				<X>10</X>
+				<Y>105</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Legs</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxBoots' template='chkbox'>
+				<X>10</X>
+				<Y>125</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Boots</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxCloak' template='chkbox'>
+				<X>185</X>
+				<Y>5</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>Cloak</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxWaist' template='chkbox'>
+				<X>185</X>
+				<Y>25</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>Waist</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxPrimary' template='chkbox'>
+				<X>260</X>
+				<Y>5</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>Primary</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxSecondary' template='chkbox'>
+				<X>260</X>
+				<Y>25</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>Secondary</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxRanged' template='chkbox'>
+				<X>260</X>
+				<Y>45</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>Ranged</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+			<checkbox name='ChkBoxShowLinks' template='chkbox'>
+				<X>185</X>
+				<Y>200</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Right</Alignment>
+				<Text>Show Equiped Link</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</checkbox>
+
+			
+			<Text name='ItemResolveText' template='Text'>
+				<X>50</X>
+				<Y>200</Y>
+				<Width>350</Width>
+				<Height>20</Height>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Left</Alignment>
+				<Text>Item Resolve</Text>
+			</Text>
+			<TextEntry Name='TextEntryItemResolve'>
+				<X>10</X>
+				<Y>200</Y>
+				<Width>35</Width>
+				<Height>15</Height>
+				<MaxLength>5</MaxLength>
+				<OnLoad>
+					This:SetText[75]
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</TextEntry>
+			<Text name='TextCharacterResolveText' template='Text'>
+				<X>50</X>
+				<Y>225</Y>
+				<Width>350</Width>
+				<Height>20</Height>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Alignment>Left</Alignment>
+				<Text>Character Resolve</Text>
+			</Text>
+			<TextEntry Name='TextEntryCharacterResolve'>
+				<X>10</X>
+				<Y>225</Y>
+				<Width>35</Width>
+				<Height>15</Height>
+				<MaxLength>5</MaxLength>
+				<OnLoad>
+					This:SetText[1790]
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</TextEntry>
+
+
+				<CommandButton Name="Run Stats Checker" template='Button'>
+					<X>175</X>
+					<Y>250</Y>
+					<Width>85</Width>
+					<Height>20</Height>
+					<Text>Run</Text>
+					<Alignment>Center</Alignment>
+					<Font>
+						<Size>20</Size>
+					</Font>
+					<OnLeftClick>
+						runscript "${LavishScript.HomeDirectory}/Scripts/Custom/EQ2EquipmentChecker"
+					</OnLeftClick>
+					<OnLoad>
+					</OnLoad>
+					<OnUnLoad>
+					</OnUnLoad>
+				</CommandButton>
+		</Children>
+	</Window>
+
+</ISUI>

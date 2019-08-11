@@ -4,7 +4,7 @@ function main()
 	variable index:quest Quests
 	variable iterator AQ
     variable int NumQuests
-    variable int Counter = 1
+    variable int Counter = 0
     
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ;; Active Quests
@@ -22,7 +22,13 @@ function main()
 		{
         do
 			{
-            If ${AQ.Value.Category.Find["Mission"]} && !${AQ.Value.Category.Find["Weekly"]}
+            ;echo "-----"
+            ;echo "-- ${AQ.Value.Name}"
+            ;echo "-- ID: ${AQ.Value.ID}"
+            ;echo "-- Level: ${AQ.Value.Level}"
+            ;echo "-- Category: ${AQ.Value.Category}"
+            ;echo "-- Current Zone: ${AQ.Value.CurrentZone}"
+			If (${AQ.Value.Category.Find["Mission"]} && (!${AQ.Value.Category.Find["Weekly"]} || ${AQ.Value.Name.Find["Raid I"]}))
 				{
 				Counter:Inc
 				OgreBotAPI:DeleteQuest["${Me}","${AQ.Value.Name}"]

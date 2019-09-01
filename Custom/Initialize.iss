@@ -37,8 +37,11 @@ OgreBotAPI:UplinkOptionChange["All","checkbox_settings_meleeattack","TRUE","TRUE
 
 OgreBotAPI:UplinkOptionChange["All","checkbox_settings_movemelee","FALSE","TRUE"]
 OgreBotAPI:UplinkOptionChange["scouts|warden|inquisitor","checkbox_settings_movemelee","TRUE","TRUE"]
+OgreBotAPI:UplinkOptionChange["${sMe}","checkbox_settings_movemelee","FALSE","TRUE"]
+
 OgreBotAPI:UplinkOptionChange["All","checkbox_settings_movebehind","FALSE","TRUE"]
 OgreBotAPI:UplinkOptionChange["scouts|warden|inquisitor","checkbox_settings_movebehind","TRUE","TRUE"]
+OgreBotAPI:UplinkOptionChange["${sMe}","checkbox_settings_movebehind","FALSE","TRUE"]
 
 OgreBotAPI:UplinkOptionChange["All","checkbox_settings_moveinfront","FALSE","TRUE"]
 
@@ -78,7 +81,7 @@ OgreBotAPI:UplinkOptionChange["All","checkbox_settings_acceptinvites","TRUE","TR
 OgreBotAPI:UplinkOptionChange["All","checkbox_settings_acceptnochoicerewards","TRUE","TRUE"]
 
 OgreBotAPI:UplinkOptionChange["All+-fighter","checkbox_settings_autotargetwhenhated","FALSE","TRUE"]
-OgreBotAPI:UplinkOptionChange["fighter","checkbox_settings_autotargetwhenhated","TRUE","TRUE"]
+OgreBotAPI:UplinkOptionChange["fighter|${sMe}","checkbox_settings_autotargetwhenhated","TRUE","TRUE"]
 
 OgreBotAPI:UplinkOptionChange["All","checkbox_settings_display_ethereal_mission_info","FALSE","TRUE"]
 OgreBotAPI:UplinkOptionChange["${sMe}","checkbox_settings_display_ethereal_mission_info","TRUE","TRUE"]

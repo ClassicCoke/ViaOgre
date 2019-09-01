@@ -59,6 +59,7 @@ eq2execute target Rosewind
 eq2execute target Jacobie
 eq2execute target Thanelo
 eq2execute target Beardicus
+eq2execute target Akashiio
 wait 5
 eq2execute tagtarget clear
 wait 5

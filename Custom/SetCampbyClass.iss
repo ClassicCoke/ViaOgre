@@ -158,6 +158,6 @@ function main(  bool bFront, bool bJoust, string sWho1, int iWho1, bool bTank1, 
 ;; Check if want to Joust in 	
 	If ${bJoust}
 		{
-		IRC !c ${sWho} -JoustIn Scout|Inquisitor
+		IRC !c ${sWho} -JoustIn Scout|Inquisitor|Warden
 		}
 }

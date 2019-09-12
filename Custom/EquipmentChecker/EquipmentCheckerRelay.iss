@@ -8,7 +8,7 @@ function main()
 	variable float fCheck=${UIElement[${EQ2ItemResolveID}].Text}
 	;variable float fTeir=${UIElement[${EQ2CharResolveID}].Item}
 	variable float fTeir=0
-	variable bool bLink=${UIElement[${EQ2ShowLinkID}].Checked}
+	variable bool bLink="FALSE"
 	variable int iMaxIRCUserLength=12
 	variable string sForWho
 	; End load from UI Window

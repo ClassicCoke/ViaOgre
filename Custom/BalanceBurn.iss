@@ -13,7 +13,7 @@ While !${bComplete} || ${Me.InCombat}
 	{
 	If ${Me.InCombat}
 		{
-		EQ2:QueryActors[Actors, ThreatToMe > 0 && Distance <= 100 && !IsDead ]
+		EQ2:QueryActors[Actors, ThreatToMe > 0 && Distance <= 30 && !IsDead ]
 		Actors:GetIterator[ActorIterator]
 		if ${ActorIterator:First(exists)}
 			{

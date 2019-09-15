@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ISUI>
+	<!-- Main UI Window -->
+	<Window Name='SetGlobals' Template='Window'>
+		<X>20</X>
+		<Y>20</Y>
+		<Width>550</Width>
+		<Height>500</Height>
+		<Client Template="Window.Client" />
+		<StorePosition>1</StorePosition>
+		<Title>Set Globals v1.00</Title>
+		<TitleBar Template="Window.TitleBar">
+			<X>0</X>
+			<Y>0</Y>
+			<Width>100%</Width>
+			<Height>20</Height>
+			<Children>
+				<Text Name="Title" Template="Window.TitleBar.Title">
+					<Alignment>Center</Alignment>
+				</Text>
+				<Button Name="Minimize" Template="Window.TitleBar.Minimize">
+					<X>90%</X>
+					<Width>20</Width>
+					<Height>20</Height>
+				</Button>
+				<CommandButton Name="Custom Quit Button" Template="Window.TitleBar.Close">
+					<X>95%</X>
+					<Width>20</Width>
+					<Height>20</Height>
+					<OnLeftClick>
+						ui -unload scripts\\Custom\\Globals\\SetGlobalsXML.xml
+					</OnLeftClick>
+				</CommandButton>
+			</Children>
+		</TitleBar>
+		<Children>
+			<Frame name='Globals' Template='frame'>
+				<X>0</X>
+				<Y>0</Y>
+				<Border>1</Border>
+				<Color>FF00FF00</Color>
+				<Resizable>0</Resizable>
+				<Height>400</Height>
+				<Width>550</Width>
+				<Visible>1</Visible>
+				<Children>
+					<TextEntry Name='CFW'>
+						<X>5</X>
+						<Y>10</Y>
+						<Width>320</Width>
+						<Height>20</Height>
+						<MaxLength>50</MaxLength>
+						<Font>
+							<Color>FF00FF00</Color>
+							<Size>15</Size>
+						</Font>
+						<OnLoad>
+							This:SetText[${gsCFW}]
+							This:LeftClick
+						</OnLoad>
+						<OnKeyDown>
+							if ${Key.Equal[ESC]}
+								This:SetText[]
+						</OnKeyDown>
+					</TextEntry>
+					<Text name='CFW_text' template='Text'>
+						<X>330</X>
+						<Y>10</Y>
+						<Width>215</Width>
+						<Height>20</Height>
+						<Font>
+							<Size>20</Size>
+							<Color>FFFFFF00</Color>
+						</Font>
+						<Alignment>Left</Alignment>
+						<Text>ForWho (gsCFW)</Text>
+					</Text>
+					<TextEntry Name='MainTank'>
+						<X>5</X>
+						<Y>40</Y>
+						<Width>320</Width>
+						<Height>20</Height>
+						<MaxLength>50</MaxLength>
+						<Font>
+							<Color>FF00FF00</Color>
+							<Size>15</Size>
+						</Font>
+						<OnLoad>
+							This:SetText[${gsMT}]
+						</OnLoad>
+						<OnKeyDown>
+							if ${Key.Equal[ESC]}
+								This:SetText[]
+						</OnKeyDown>
+					</TextEntry>
+					<Text name='MainTank_text' template='Text'>
+						<X>330</X>
+						<Y>40</Y>
+						<Width>215</Width>
+						<Height>20</Height>
+						<Font>
+							<Size>20</Size>
+							<Color>FFFFFF00</Color>
+						</Font>
+						<Alignment>Left</Alignment>
+						<Text>Main Tank (gsMT)</Text>
+					</Text>
+					<TextEntry Name='OffTank'>
+						<X>5</X>
+						<Y>70</Y>
+						<Width>320</Width>
+						<Height>20</Height>
+						<MaxLength>50</MaxLength>
+						<Font>
+							<Color>FF00FF00</Color>
+							<Size>15</Size>
+						</Font>
+						<OnLoad>
+							This:SetText[${gsOT}]
+						</OnLoad>
+						<OnKeyDown>
+							if ${Key.Equal[ESC]}
+								This:SetText[]
+						</OnKeyDown>
+					</TextEntry>
+					<Text name='OffTank_text' template='Text'>
+						<X>330</X>
+						<Y>70</Y>
+						<Width>215</Width>
+						<Height>20</Height>
+						<Font>
+							<Size>20</Size>
+							<Color>FFFFFF00</Color>
+						</Font>
+						<Alignment>Left</Alignment>
+						<Text>Off Tank (gsOT)</Text>
+					</Text>
+					<TextEntry Name='MainAssist'>
+						<X>5</X>
+						<Y>100</Y>
+						<Width>320</Width>
+						<Height>20</Height>
+						<MaxLength>50</MaxLength>
+						<Font>
+							<Color>FF00FF00</Color>
+							<Size>15</Size>
+						</Font>
+						<OnLoad>
+							This:SetText[${gsMA}]
+						</OnLoad>
+						<OnKeyDown>
+							if ${Key.Equal[ESC]}
+								This:SetText[]
+						</OnKeyDown>
+					</TextEntry>
+					<Text name='MainAssist_text' template='Text'>
+						<X>330</X>
+						<Y>100</Y>
+						<Width>215</Width>
+						<Height>20</Height>
+						<Font>
+							<Size>20</Size>
+							<Color>FFFFFF00</Color>
+						</Font>
+						<Alignment>Left</Alignment>
+						<Text>Main Assist (gsMA)</Text>
+					</Text>
+					<TextEntry Name='OgreFollow'>
+						<X>5</X>
+						<Y>130</Y>
+						<Width>320</Width>
+						<Height>20</Height>
+						<MaxLength>50</MaxLength>
+						<Font>
+							<Color>FF00FF00</Color>
+							<Size>15</Size>
+						</Font>
+						<OnLoad>
+							This:SetText[${gsOFollow}]
+						</OnLoad>
+						<OnKeyDown>
+							if ${Key.Equal[ESC]}
+								This:SetText[]
+						</OnKeyDown>
+					</TextEntry>
+					<Text name='OgreFollow_text' template='Text'>
+						<X>330</X>
+						<Y>130</Y>
+						<Width>215</Width>
+						<Height>20</Height>
+						<Font>
+							<Size>20</Size>
+							<Color>FFFFFF00</Color>
+						</Font>
+						<Alignment>Left</Alignment>
+						<Text>Ogre Follow (gsOFollow)</Text>
+					</Text>
+					<TextEntry Name='Misc1'>
+						<X>5</X>
+						<Y>160</Y>
+						<Width>320</Width>
+						<Height>20</Height>
+						<MaxLength>50</MaxLength>
+						<Font>
+							<Color>FF00FF00</Color>
+							<Size>15</Size>
+						</Font>
+						<OnLoad>
+							This:SetText[${gsMisc1}]
+						</OnLoad>
+						<OnKeyDown>
+							if ${Key.Equal[ESC]}
+								This:SetText[]
+						</OnKeyDown>
+					</TextEntry>
+					<Text name='Misc1_text' template='Text'>
+						<X>330</X>
+						<Y>160</Y>
+						<Width>215</Width>
+						<Height>20</Height>
+						<Font>
+							<Size>20</Size>
+							<Color>FFFFFF00</Color>
+						</Font>
+						<Alignment>Left</Alignment>
+						<Text>Misc1 (gsMisc1)</Text>
+					</Text>
+					<TextEntry Name='Misc2'>
+						<X>5</X>
+						<Y>190</Y>
+						<Width>320</Width>
+						<Height>20</Height>
+						<MaxLength>50</MaxLength>
+						<Font>
+							<Color>FF00FF00</Color>
+							<Size>15</Size>
+						</Font>
+						<OnLoad>
+							This:SetText[${gsMisc2}]
+						</OnLoad>
+						<OnKeyDown>
+							if ${Key.Equal[ESC]}
+								This:SetText[]
+						</OnKeyDown>
+					</TextEntry>
+					<Text name='Misc2_text' template='Text'>
+						<X>330</X>
+						<Y>190</Y>
+						<Width>215</Width>
+						<Height>20</Height>
+						<Font>
+							<Size>20</Size>
+							<Color>FFFFFF00</Color>
+						</Font>
+						<Alignment>Left</Alignment>
+						<Text>Misc2 (gsMisc2)</Text>
+					</Text>
+					<TextEntry Name='Misc3'>
+						<X>5</X>
+						<Y>220</Y>
+						<Width>320</Width>
+						<Height>20</Height>
+						<MaxLength>50</MaxLength>
+						<Font>
+							<Color>FF00FF00</Color>
+							<Size>15</Size>
+						</Font>
+						<OnLoad>
+							This:SetText[${gsMisc3}]
+						</OnLoad>
+						<OnKeyDown>
+							if ${Key.Equal[ESC]}
+								This:SetText[]
+						</OnKeyDown>
+					</TextEntry>
+					<Text name='Misc3_text' template='Text'>
+						<X>330</X>
+						<Y>220</Y>
+						<Width>215</Width>
+						<Height>20</Height>
+						<Font>
+							<Size>20</Size>
+							<Color>FFFFFF00</Color>
+						</Font>
+						<Alignment>Left</Alignment>
+						<Text>Misc3 (gsMisc3)</Text>
+					</Text>
+					<TextEntry Name='Misc4'>
+						<X>5</X>
+						<Y>250</Y>
+						<Width>320</Width>
+						<Height>20</Height>
+						<MaxLength>50</MaxLength>
+						<Font>
+							<Color>FF00FF00</Color>
+							<Size>15</Size>
+						</Font>
+						<OnLoad>
+							This:SetText[${gsMisc4}]
+						</OnLoad>
+						<OnKeyDown>
+							if ${Key.Equal[ESC]}
+								This:SetText[]
+						</OnKeyDown>
+					</TextEntry>
+					<Text name='Misc4_text' template='Text'>
+						<X>330</X>
+						<Y>250</Y>
+						<Width>215</Width>
+						<Height>20</Height>
+						<Font>
+							<Size>20</Size>
+							<Color>FFFFFF00</Color>
+						</Font>
+						<Alignment>Left</Alignment>
+						<Text>Misc4 (gsMisc4)</Text>
+					</Text>
+					<TextEntry Name='Misc5'>
+						<X>5</X>
+						<Y>280</Y>
+						<Width>320</Width>
+						<Height>20</Height>
+						<MaxLength>50</MaxLength>
+						<Font>
+							<Color>FF00FF00</Color>
+							<Size>15</Size>
+						</Font>
+						<OnLoad>
+							This:SetText[${gsMisc5}]
+						</OnLoad>
+						<OnKeyDown>
+							if ${Key.Equal[ESC]}
+								This:SetText[]
+						</OnKeyDown>
+					</TextEntry>
+					<Text name='Misc5_text' template='Text'>
+						<X>330</X>
+						<Y>280</Y>
+						<Width>215</Width>
+						<Height>20</Height>
+						<Font>
+							<Size>20</Size>
+							<Color>FFFFFF00</Color>
+						</Font>
+						<Alignment>Left</Alignment>
+						<Text>Misc5 (gsMisc5)</Text>
+					</Text>
+					<TextEntry Name='Misc6'>
+						<X>5</X>
+						<Y>310</Y>
+						<Width>320</Width>
+						<Height>20</Height>
+						<MaxLength>50</MaxLength>
+						<Font>
+							<Color>FF00FF00</Color>
+							<Size>15</Size>
+						</Font>
+						<OnLoad>
+							This:SetText[${gsMisc6}]
+						</OnLoad>
+						<OnKeyDown>
+							if ${Key.Equal[ESC]}
+								This:SetText[]
+						</OnKeyDown>
+					</TextEntry>
+					<Text name='Misc6_text' template='Text'>
+						<X>330</X>
+						<Y>310</Y>
+						<Width>215</Width>
+						<Height>20</Height>
+						<Font>
+							<Size>20</Size>
+							<Color>FFFFFF00</Color>
+						</Font>
+						<Alignment>Left</Alignment>
+						<Text>Misc6 (gsMisc6)</Text>
+					</Text>
+				</Children>
+			</Frame>
+			<Frame name='Actions' Template='frame'>
+				<X>0</X>
+				<Y>400</Y>
+				<Border>1</Border>
+				<Resizable>0</Resizable>
+				<Height>80</Height>
+				<Width>550</Width>
+				<Color>FF00FF00</Color>
+				<Visible>1</Visible>
+				<Children>
+					<CommandButton Name="UpdateGlobals" template='Button'>
+						<X>52</X>
+						<Y>20</Y>
+						<Width>80</Width>
+						<Height>40</Height>
+						<Text>Update</Text>
+						<Alignment>Center</Alignment>
+						<Font>
+							<Size>20</Size>
+						</Font>
+						<OnLeftClick>
+							runscript "${LavishScript.HomeDirectory}/Scripts/Custom/Globals/UpdateGlobals"
+						</OnLeftClick>
+						<OnLoad>
+						</OnLoad>
+						<OnUnLoad>
+						</OnUnLoad>
+					</CommandButton>
+					<CommandButton Name="LoadGlobals" template='Button'>
+						<X>232</X>
+						<Y>20</Y>
+						<Width>80</Width>
+						<Height>40</Height>
+						<Text>Load</Text>
+						<Alignment>Center</Alignment>
+						<Font>
+							<Size>20</Size>
+						</Font>
+						<OnLeftClick>
+							runscript "${LavishScript.HomeDirectory}/Scripts/Custom/Globals/LoadGlobals"
+						</OnLeftClick>
+						<OnLoad>
+						</OnLoad>
+						<OnUnLoad>
+						</OnUnLoad>
+					</CommandButton>
+					<CommandButton Name="SaveGlobals" template='Button'>
+						<X>418</X>
+						<Y>20</Y>
+						<Width>80</Width>
+						<Height>40</Height>
+						<Text>Save</Text>
+						<Alignment>Center</Alignment>
+						<Font>
+							<Size>20</Size>
+						</Font>
+						<OnLeftClick>
+							runscript "${LavishScript.HomeDirectory}/Scripts/Custom/Globals/SaveGlobals"
+						</OnLeftClick>
+						<OnLoad>
+						</OnLoad>
+						<OnUnLoad>
+						</OnUnLoad>
+					</CommandButton>
+
+				</Children>
+			</Frame>
+		</Children>
+	</Window>
+</ISUI>

@@ -18,7 +18,7 @@ function main(string sAction, string s1, string s2, string s3, string s4, string
 	If ${sAction.Find["Delete"]}
 		{
 		deletevariable gsCFW
-		IRC Ghrack removed CustomGlobals
+		IRC ${Me} removed CustomGlobals
 		}
 		else
 		{
@@ -44,6 +44,6 @@ function main(string sAction, string s1, string s2, string s3, string s4, string
 		IRC ..${Me} - gsMisc4:${gsMisc4}
 		IRC ..${Me} - gsMisc5:${gsMisc5}
 		IRC ..${Me} - gsMisc6:${gsMisc6}
-		IRC Ghrack setup CustomGlobals
+		IRC ${Me} setup CustomGlobals
 		}
 }

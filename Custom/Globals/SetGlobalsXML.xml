@@ -55,9 +55,14 @@
 							<Size>15</Size>
 						</Font>
 						<OnLoad>
+							declarevariable teCFWID int globalKeep
+							teCFWID:Set[${This.ID}]
 							This:SetText[${gsCFW}]
 							This:LeftClick
 						</OnLoad>
+						<OnUnLoad>
+							deletevariable teCFWID
+						</OnUnLoad>
 						<OnKeyDown>
 							if ${Key.Equal[ESC]}
 								This:SetText[]
@@ -86,8 +91,13 @@
 							<Size>15</Size>
 						</Font>
 						<OnLoad>
+							declarevariable teMTID int globalkeep
+							teCFWID:Set[${This.ID}]
 							This:SetText[${gsMT}]
 						</OnLoad>
+						<OnUnLoad>
+							deletevariable teMTID
+						</OnUnLoad>
 						<OnKeyDown>
 							if ${Key.Equal[ESC]}
 								This:SetText[]
@@ -116,8 +126,13 @@
 							<Size>15</Size>
 						</Font>
 						<OnLoad>
+							declarevariable teOTID int globalkeep
+							teCFWID:Set[${This.ID}]
 							This:SetText[${gsOT}]
 						</OnLoad>
+						<OnUnLoad>
+							deletevariable teOTID
+						</OnUnLoad>
 						<OnKeyDown>
 							if ${Key.Equal[ESC]}
 								This:SetText[]

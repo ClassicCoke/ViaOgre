@@ -1,31 +1,46 @@
+
+
+variable settingsetref setProfileList 
+variable string GlobalProfiles="${LavishScript.HomeDirectory}/Scripts/Custom/Globals/GlobalProfiles.xml"
+
+
+
 function main()
 {
 
-;variable	string	sCFW=${UIElement[SetGlobals].FindChild[Globals].FindChild[CFW].Text}
-;variable	string	sMT=${UIElement[SetGlobals].FindChild[Globals].FindChild[MainTank].Text}
-;variable	string	sOT=${UIElement[SetGlobals].FindChild[Globals].FindChild[OffTank].Text}
-;variable	string	sMA=${UIElement[SetGlobals].FindChild[Globals].FindChild[MainAssist].Text}
-;variable	string	sOFollow=${UIElement[SetGlobals].FindChild[Globals].FindChild[OgreFollow].Text}
+Call SaveGlobals "Group"
 
-;variable	string	sMisc1=${UIElement[SetGlobals].FindChild[Globals].FindChild[Misc1].Text}
-;variable	string	sMisc2=${UIElement[SetGlobals].FindChild[Globals].FindChild[Misc2].Text}
-;variable	string	sMisc3=${UIElement[SetGlobals].FindChild[Globals].FindChild[Misc3].Text}
-;variable	string	sMisc4=${UIElement[SetGlobals].FindChild[Globals].FindChild[Misc4].Text}
-;variable	string	sMisc5=${UIElement[SetGlobals].FindChild[Globals].FindChild[Misc5].Text}
-;variable	string	sMisc6=${UIElement[SetGlobals].FindChild[Globals].FindChild[Misc6].Text}
-
-
-;gsCFW:Set[${sCFW}]
-;gsMT:Set[${sMT}]
-;gsOT:Set[${sOT}]
-;gsMA:Set[${sMA}]
-;gsOFollow:Set[${sOFollow}]
-;gsMisc1:Set[${sMisc1}]
-;gsMisc2:Set[${sMisc2}]
-;gsMisc3:Set[${sMisc3}]
-;gsMisc4:Set[${sMisc4}]
-;gsMisc5:Set[${sMisc5}]
-;gsMisc6:Set[${sMisc6}]
-
-IRC ${Me} has saved Globals (Place Holder)
+Echo ${Me} - Save Globals Complete
 }
+
+
+function InitGlobals()
+	{
+	;// Clear then Load LavishSettings to make sure it's clean.
+	LavishSettings[Globals]:Clear
+	LavishSettings:AddSet[Globals]
+	LavishSettings[Globals]:Import[${GlobalProfiles}]
+	LavishSettings[Globals]:AddSet[ProfileList]
+	setProfileList:Set[${LavishSettings[Globals].FindSet[ProfileList]}]
+	}
+
+function SaveGlobals(string ProfileName)
+	{
+	call InitGlobals	
+	setProfileList:AddSet[${ProfileName}]
+	setProfileList:Set[${setProfileList.FindSet[${ProfileName}]}]
+	
+	setProfileList:AddSetting[CFW,${UIElement[SetGlobals].FindChild[Globals].FindChild[CFW].Text.Escape}]
+	setProfileList:AddSetting[MT,${UIElement[SetGlobals].FindChild[Globals].FindChild[MainTank].Text.Escape}]
+	setProfileList:AddSetting[OT,${UIElement[SetGlobals].FindChild[Globals].FindChild[OffTank].Text.Escape}]
+	setProfileList:AddSetting[MA,${UIElement[SetGlobals].FindChild[Globals].FindChild[MainAssist].Text.Escape}]
+	setProfileList:AddSetting[OFollow,${UIElement[SetGlobals].FindChild[Globals].FindChild[OgreFollow].Text.Escape}]
+	setProfileList:AddSetting[Misc1,${UIElement[SetGlobals].FindChild[Globals].FindChild[Misc1].Text.Escape}]
+	setProfileList:AddSetting[Misc2,${UIElement[SetGlobals].FindChild[Globals].FindChild[Misc2].Text.Escape}]
+	setProfileList:AddSetting[Misc3,${UIElement[SetGlobals].FindChild[Globals].FindChild[Misc3].Text.Escape}]
+	setProfileList:AddSetting[Misc4,${UIElement[SetGlobals].FindChild[Globals].FindChild[Misc4].Text.Escape}]
+	setProfileList:AddSetting[Misc5,${UIElement[SetGlobals].FindChild[Globals].FindChild[Misc5].Text.Escape}]
+	setProfileList:AddSetting[Misc6,${UIElement[SetGlobals].FindChild[Globals].FindChild[Misc6].Text.Escape}]
+
+	LavishSettings[Globals]:Export[${GlobalProfiles}]
+	}

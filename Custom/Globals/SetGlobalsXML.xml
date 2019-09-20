@@ -57,7 +57,7 @@
 						<OnLoad>
 							declarevariable teCFWID int globalKeep
 							teCFWID:Set[${This.ID}]
-							This:SetText[${gsCFW}]
+							This:SetText[${gsCFW.Escape}]
 							This:LeftClick
 						</OnLoad>
 						<OnUnLoad>
@@ -93,7 +93,7 @@
 						<OnLoad>
 							declarevariable teMTID int globalkeep
 							teCFWID:Set[${This.ID}]
-							This:SetText[${gsMT}]
+							This:SetText[${gsMT.Escape}]
 						</OnLoad>
 						<OnUnLoad>
 							deletevariable teMTID
@@ -128,7 +128,7 @@
 						<OnLoad>
 							declarevariable teOTID int globalkeep
 							teCFWID:Set[${This.ID}]
-							This:SetText[${gsOT}]
+							This:SetText[${gsOT.Escape}]
 						</OnLoad>
 						<OnUnLoad>
 							deletevariable teOTID
@@ -161,7 +161,7 @@
 							<Size>15</Size>
 						</Font>
 						<OnLoad>
-							This:SetText[${gsMA}]
+							This:SetText[${gsMA.Escape}]
 						</OnLoad>
 						<OnKeyDown>
 							if ${Key.Equal[ESC]}
@@ -191,7 +191,7 @@
 							<Size>15</Size>
 						</Font>
 						<OnLoad>
-							This:SetText[${gsOFollow}]
+							This:SetText[${gsOFollow.Escape}]
 						</OnLoad>
 						<OnKeyDown>
 							if ${Key.Equal[ESC]}
@@ -221,7 +221,7 @@
 							<Size>15</Size>
 						</Font>
 						<OnLoad>
-							This:SetText[${gsMisc1}]
+							This:SetText[${gsMisc1.Escape}]
 						</OnLoad>
 						<OnKeyDown>
 							if ${Key.Equal[ESC]}
@@ -251,7 +251,7 @@
 							<Size>15</Size>
 						</Font>
 						<OnLoad>
-							This:SetText[${gsMisc2}]
+							This:SetText[${gsMisc2.Escape}]
 						</OnLoad>
 						<OnKeyDown>
 							if ${Key.Equal[ESC]}
@@ -281,7 +281,7 @@
 							<Size>15</Size>
 						</Font>
 						<OnLoad>
-							This:SetText[${gsMisc3}]
+							This:SetText[${gsMisc3.Escape}]
 						</OnLoad>
 						<OnKeyDown>
 							if ${Key.Equal[ESC]}
@@ -311,7 +311,7 @@
 							<Size>15</Size>
 						</Font>
 						<OnLoad>
-							This:SetText[${gsMisc4}]
+							This:SetText[${gsMisc4.Escape}]
 						</OnLoad>
 						<OnKeyDown>
 							if ${Key.Equal[ESC]}
@@ -341,7 +341,7 @@
 							<Size>15</Size>
 						</Font>
 						<OnLoad>
-							This:SetText[${gsMisc5}]
+							This:SetText[${gsMisc5.Escape}]
 						</OnLoad>
 						<OnKeyDown>
 							if ${Key.Equal[ESC]}
@@ -371,7 +371,7 @@
 							<Size>15</Size>
 						</Font>
 						<OnLoad>
-							This:SetText[${gsMisc6}]
+							This:SetText[${gsMisc6.Escape}]
 						</OnLoad>
 						<OnKeyDown>
 							if ${Key.Equal[ESC]}

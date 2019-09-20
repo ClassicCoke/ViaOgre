@@ -1,60 +1,92 @@
-variable(globalkeep)	string	gsCFW
-variable(globalkeep)	string	gsMT
-variable(globalkeep)	string	gsOT
-variable(globalkeep)	string	gsMA
-variable(globalkeep)	string	gsOFollow
-
-variable(globalkeep)	string	gsMisc1
-variable(globalkeep)	string	gsMisc2
-variable(globalkeep)	string	gsMisc3
-variable(globalkeep)	string	gsMisc4
-variable(globalkeep)	string	gsMisc5
-variable(globalkeep)	string	gsMisc6
+variable settingsetref setProfileList 
+variable string GlobalProfiles="${LavishScript.HomeDirectory}/Scripts/Custom/Globals/GlobalProfiles.xml"
 
 
-function main(string sAction, string s1, string s2, string s3, string s4, string s5, string s6, string s7, string s8, string s9, string s10, string s11)
+
+function main()
 {
-	IRC Run script:SetCustomGlobals
-	If ${sAction.Find["Delete"]}
+	if !${gsCFW(exists)}
 		{
-		deletevariable gsCFW
-		deletevariable gsMT
-		deletevariable gsOT
-		deletevariable gsMA
-		deletevariable gsOFollow
-
-		deletevariable gsMisc1
-		deletevariable gsMisc2
-		deletevariable gsMisc3
-		deletevariable gsMisc4
-		deletevariable gsMisc5
-		deletevariable gsMisc6
-		IRC ${Me} removed CustomGlobals
+		; Declare Globals if not already defined
+		declarevariable gsCFW string globalkeep
+		declarevariable gsMT string globalkeep
+		declarevariable gsOT string globalkeep
+		declarevariable gsMA string globalkeep
+		declarevariable gsOFollow string globalkeep
+		declarevariable gsMisc1 string globalkeep
+		declarevariable gsMisc2 string globalkeep
+		declarevariable gsMisc3 string globalkeep
+		declarevariable gsMisc4 string globalkeep
+		declarevariable gsMisc5 string globalkeep
+		declarevariable gsMisc6 string globalkeep
+		Call LoadGlobals "Group"
+		Echo ${Me} - Globals Initialized
 		}
-		else
-		{
-		gsCFW:Set[${s1}]
-		gsMT:Set[${s2}]
-		gsOT:Set[${s3}]
-		gsMA:Set[${s4}]
-		gsOFollow:Set[${s5}]
-		gsMisc1:Set[${s6}]
-		gsMisc2:Set[${s7}]
-		gsMisc3:Set[${s8}]
-		gsMisc4:Set[${s9}]
-		gsMisc5:Set[${s10}]
-		gsMisc6:Set[${s11}]
-		IRC ..${Me} - gsCFW:${gsCFW1}
-		IRC ..${Me} - gsMT:${gsMT}
-		IRC ..${Me} - gsOT:${gsOT}
-		IRC ..${Me} - gsMA:${gsMA}
-		IRC ..${Me} - gsOFollow:${gsOFollow}
-		IRC ..${Me} - gsMisc1:${gsMisc1}
-		IRC ..${Me} - gsMisc2:${gsMisc2}
-		IRC ..${Me} - gsMisc3:${gsMisc3}
-		IRC ..${Me} - gsMisc4:${gsMisc4}
-		IRC ..${Me} - gsMisc5:${gsMisc5}
-		IRC ..${Me} - gsMisc6:${gsMisc6}
-		IRC ${Me} setup CustomGlobals
-		}
+	Echo ${Me} - Globals Already Exist, Skipping load from XML
 }
+
+
+function InitGlobals()
+	{
+	;// Clear then Load LavishSettings to make sure it's clean.
+	LavishSettings[Globals]:Clear
+	LavishSettings:AddSet[Globals]
+	LavishSettings[Globals]:Import[${GlobalProfiles}]
+	LavishSettings[Globals]:AddSet[ProfileList]
+	setProfileList:Set[${LavishSettings[Globals].FindSet[ProfileList]}]
+	}
+
+function LoadGlobals(string ProfileName)
+	{
+	call InitGlobals
+	setProfileList:Set[${setProfileList.FindSet[${ProfileName}]}]
+	variable iterator Iterator
+	setProfileList:GetSettingIterator[Iterator]
+	if ${Iterator:First(exists)}
+		{
+		do
+			{
+			Echo ${Iterator.Key} = ${Iterator.Value.String.Escape}
+			switch ${Iterator.Key}
+				{	
+				case CFW
+					gsCFW:Set[${Iterator.Value.String.Escape}]
+					break
+				case MT
+					gsMT:Set[${Iterator.Value.String.Escape}]
+					break
+				case OT
+					gsOT:Set[${Iterator.Value.String.Escape}]
+					break
+				case MA
+					gsMA:Set[${Iterator.Value.String.Escape}]
+					break
+				case OFollow
+					gsOFollow:Set[${Iterator.Value.String.Escape}]
+					break
+				case Misc1
+					gsMisc1:Set[${Iterator.Value.String.Escape}]
+					break
+				case Misc2
+					gsMisc2:Set[${Iterator.Value.String.Escape}]
+					break
+				case Misc3
+					gsMisc3:Set[${Iterator.Value.String.Escape}]
+					break
+				case Misc4
+					gsMisc4:Set[${Iterator.Value.String.Escape}]
+					break
+				case Misc5
+					gsMisc5:Set[${Iterator.Value.String.Escape}]
+					break
+				case Misc6
+					gsMisc6:Set[${Iterator.Value.String.Escape}]
+					break
+				default
+					OgreConsole:Message["Globals Parser: Unknown Key encountered: ${Iterator.Key}"]
+					break
+				}
+			}
+			while ${Iterator:Next(exists)}
+		}
+	}

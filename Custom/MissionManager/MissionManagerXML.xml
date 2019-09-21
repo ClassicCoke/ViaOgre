@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ISUI>
+	<Template Name='chkbox' template='checkbox'>
+		<Width>30</Width>
+		<Height>23</Height>
+	</Template>
+	<!-- Main UI Window -->
+	<Window Name='MissionManager' Template='Window'>
+		<X>20</X>
+		<Y>20</Y>
+		<Width>320</Width>
+		<Height>120</Height>
+		<Client Template="Window.Client" />
+		<StorePosition>1</StorePosition>
+		<Title>Mission Manager v1.00</Title>
+		<TitleBar Template="Window.TitleBar">
+			<X>0</X>
+			<Y>0</Y>
+			<Width>100%</Width>
+			<Height>11%</Height>
+			<Children>
+				<Text Name="Title" Template="Window.TitleBar.Title">
+					<Alignment>Center</Alignment>
+				</Text>
+				<Button Name="Minimize" Template="Window.TitleBar.Minimize">
+					<X>90%</X>
+					<Width>20</Width>
+					<Height>20</Height>
+				</Button>
+				<CommandButton Name="Custom Quit Button" Template="Window.TitleBar.Close">
+					<X>95%</X>
+					<Width>20</Width>
+					<Height>20</Height>
+					<OnLeftClick>
+						ui -unload scripts\\Custom\\MissionManager\\MissionManagerXML.xml
+					</OnLeftClick>
+				</CommandButton>
+			</Children>
+		</TitleBar>
+
+		<Children>
+			<checkbox name='cbHerioc' template='chkbox'>
+				<X>10</X>
+				<Y>5</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Herioc/Event</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+				<OnLeftClick>
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='cbDaily' template='chkbox'>
+				<X>170</X>
+				<Y>5</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Daily Missions</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+				<OnLeftClick>
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='cbWeekly' template='chkbox'>
+				<X>10</X>
+				<Y>25</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Weekly</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+				<OnLeftClick>
+				</OnLeftClick>
+			</checkbox>
+			<checkbox name='cbRaid' template='chkbox'>
+				<X>170</X>
+				<Y>25</Y>
+				<Font>
+					<Color>FF00FF00</Color>
+				</Font>
+				<Text>Raid</Text>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+				<OnLeftClick>
+				</OnLeftClick>
+			</checkbox>
+
+			<CommandButton Name="DeleteMission" template='Button'>
+				<X>135</X>
+				<Y>65</Y>
+				<Width>60</Width>
+				<Height>30</Height>
+				<Text>Run</Text>
+				<Alignment>Center</Alignment>
+				<Font>
+					<Size>20</Size>
+				</Font>
+				<OnLeftClick>
+					runscript "${LavishScript.HomeDirectory}/Scripts/Custom/MissionManager/MissionManager"
+				</OnLeftClick>
+				<OnLoad>
+				</OnLoad>
+				<OnUnLoad>
+				</OnUnLoad>
+			</CommandButton>
+		</Children>
+	</Window>
+</ISUI>

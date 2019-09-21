@@ -32,28 +32,28 @@ function main( bool bMission, bool bDailyDbl, bool bWeekly, bool bRaid )
 				{
 				; It is a normal mission
 				Counter:Inc
-				OgreBotAPI:DeleteQuest["${Me}","${AQ.Value.Name}"]
+				OgreBotAPI:DeleteQuest["IRW:${Me}","${AQ.Value.Name}"]
 				Wait 30
 				}
 			If ${bDailyDbl} && ${AQ.Value.Category.Find["Mission"]} && !${AQ.Value.Category.Find["Weekly"]} && ${AQ.Value.Name.Find["Elements of"]}
 				{
 				; It is a Daily Double
 				Counter:Inc
-				OgreBotAPI:DeleteQuest["${Me}","${AQ.Value.Name}"]
+				OgreBotAPI:DeleteQuest["IRW:${Me}","${AQ.Value.Name}"]
 				Wait 30
 				}
 			If ${bWeekly} && ${AQ.Value.Category.Find["Mission"]} && ${AQ.Value.Category.Find["Weekly"]} && !${AQ.Value.Name.Find["Raid I"]}
 				{
 				; It is a Weekly Mission
 				Counter:Inc
-				OgreBotAPI:DeleteQuest["${Me}","${AQ.Value.Name}"]
+				OgreBotAPI:DeleteQuest["IRW:${Me}","${AQ.Value.Name}"]
 				Wait 30
 				}
 			If ${bRaid} && ${AQ.Value.Category.Find["Mission"]} && ${AQ.Value.Category.Find["Weekly"]} && ${AQ.Value.Name.Find["Raid I"]}
 				{
 				; It is a Raid Mission
 				Counter:Inc
-				OgreBotAPI:DeleteQuest["${Me}","${AQ.Value.Name}"]
+				OgreBotAPI:DeleteQuest["IRW:${Me}","${AQ.Value.Name}"]
 				Wait 30
 				}
 			}

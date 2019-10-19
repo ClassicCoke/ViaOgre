@@ -36,11 +36,11 @@ OgreBotAPI:UplinkOptionChange["All","checkbox_settings_rangedattack","TRUE","TRU
 OgreBotAPI:UplinkOptionChange["All","checkbox_settings_meleeattack","TRUE","TRUE"]
 
 OgreBotAPI:UplinkOptionChange["All","checkbox_settings_movemelee","FALSE","TRUE"]
-OgreBotAPI:UplinkOptionChange["scouts|warden|inquisitor","checkbox_settings_movemelee","TRUE","TRUE"]
+OgreBotAPI:UplinkOptionChange["scouts|inquisitor","checkbox_settings_movemelee","TRUE","TRUE"]
 OgreBotAPI:UplinkOptionChange["${sMe}","checkbox_settings_movemelee","FALSE","TRUE"]
 
 OgreBotAPI:UplinkOptionChange["All","checkbox_settings_movebehind","FALSE","TRUE"]
-OgreBotAPI:UplinkOptionChange["scouts|warden|inquisitor","checkbox_settings_movebehind","TRUE","TRUE"]
+OgreBotAPI:UplinkOptionChange["scouts|inquisitor","checkbox_settings_movebehind","TRUE","TRUE"]
 OgreBotAPI:UplinkOptionChange["${sMe}","checkbox_settings_movebehind","FALSE","TRUE"]
 
 OgreBotAPI:UplinkOptionChange["All","checkbox_settings_moveinfront","FALSE","TRUE"]

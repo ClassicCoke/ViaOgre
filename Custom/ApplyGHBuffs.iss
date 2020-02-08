@@ -1,6 +1,7 @@
 function main()
 {
-variable string sWhoIRC=${UIElement[${OBUI_textentry_irc_user}].Text}
+;variable string sWhoIRC=${UIElement[${OBUI_textentry_irc_user}].Text}
+variable string sWhoIRC="All"
 
 ;Update Trophy Buff
 IRC !c ${sWhoIRC} -OgreCommandOB_AP All Nav Trophy1 -ntr

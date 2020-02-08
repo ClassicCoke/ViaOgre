@@ -112,7 +112,7 @@ function main()
 		}
 	If ${iCharacterResolveSelection.Equal[10]}
 		{
-		fTeir:Set[3000]
+		fTeir:Set[9000]
 		}
 	
 	;Determine which Equipment Slot

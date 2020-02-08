@@ -7,6 +7,7 @@ function main()
     Echo ========================================================================================
     Echo ${Time} Scanning Actors 
 	EQ2:QueryActors[Actors, Distance <= 100 && !InMyGroup]
+	;EQ2:QueryActors[Actors, Distance <= 100]
 	Actors:GetIterator[ActorIterator]
 	if ${ActorIterator:First(exists)}
 	{

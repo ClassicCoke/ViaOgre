@@ -667,7 +667,7 @@
 						<OnLoad>
 							declarevariable EQ2ItemResolveID int global
 							EQ2ItemResolveID:Set[${This.ID}]
-							This:SetText[95]
+							This:SetText[165]
 						</OnLoad>
 						<OnUnLoad>
 							deletevariable EQ2ItemResolveID
@@ -703,7 +703,7 @@
 							<Item Value='7'>2112</Item>
 							<Item Value='8'>2273</Item>
 							<Item Value='9'>2395</Item>
-							<Item Value='10' Default='10'>3000</Item>
+							<Item Value='10' Default='10'>9000</Item>
 						</Items>
 						<OnLoad>
 							declarevariable EQ2CharResolveID int global
